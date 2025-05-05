@@ -48,7 +48,7 @@ npm run build
 ### 5. Run the app
 Using Docker (Recommended)
 ``` bash
-docker-compose up
+docker-compose up -d --build
 ```
 Or run manually:
 ``` bash
