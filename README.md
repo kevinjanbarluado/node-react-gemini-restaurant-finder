@@ -34,12 +34,21 @@ cp frontend/.env.example frontend/.env
 cd backend
 npm install
 
+
+npm run build
+
 # Frontend
 cd ../frontend
 npm install
 ```
+### 4. Build TypeScript (Backend only)
+You need to run this to convert TypeScript to JavaScript:
+``` bash
+cd backend
+npm run build
+```
 
-### 4. Run the app
+### 5. Run the app
 Using Docker (Recommended)
 ``` bash
 docker-compose up
@@ -76,3 +85,6 @@ Import the file `postman_example_collection.json` into Postman.
 ## 🎯 Challenges & Notes
 - Gemini AI powers all restaurant logic (intent extraction, data structuring, etc.)
 - Foursquare integration is planned but currently not active (pending API approval)
+
+## 📝 Prerequisites
+- Node.js version: v18.20.8 (You can use nvm to install this version if needed)
