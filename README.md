@@ -1,5 +1,7 @@
 # AI-Powered Restaurant Finder
 
+![image](https://github.com/user-attachments/assets/6c782e64-1f93-4c03-b7a7-857852fe2825)
+
 A full-stack web app that uses Gemini AI to help users find restaurants based on natural language prompts.
 
 ✅ Built with Vite + React (frontend) and Express + TypeScript (backend)
