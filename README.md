@@ -34,9 +34,6 @@ cp frontend/.env.example frontend/.env
 cd backend
 npm install
 
-
-npm run build
-
 # Frontend
 cd ../frontend
 npm install
