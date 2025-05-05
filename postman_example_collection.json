@@ -1,0 +1,120 @@
+{
+  "info": {
+    "name": "node-react-gemini-restaurant-finder",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Send message",
+      "event": [],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "type",
+            "value": "application/json",
+            "disabled": false,
+            "type": "default"
+          }
+        ],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:5000/api/execute",
+          "protocol": "http",
+          "host": [
+            "localhost:5000"
+          ],
+          "path": [
+            "api",
+            "execute"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"message\":\"Find me a cheap sushi restaurant in downtown Los Angeles that's open now and has at least a 4-star rating.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Health Check",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:5000/api",
+          "protocol": "http",
+          "host": [
+            "localhost:5000"
+          ],
+          "path": [
+            "api"
+          ],
+          "query": [],
+          "variable": []
+        }
+      }
+    },
+    {
+      "name": "Foursquare",
+      "event": [],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "auth": {
+          "type": "noauth"
+        },
+        "description": "",
+        "url": {
+          "raw": "http://localhost:5000/api/foursquare?query=Sushi&near=Los Angeles&rating=4&open_now=true&price=cheap",
+          "protocol": "http",
+          "host": [
+            "localhost:5000"
+          ],
+          "path": [
+            "api",
+            "foursquare"
+          ],
+          "query": [
+            {
+              "key": "query",
+              "value": "Sushi"
+            },
+            {
+              "key": "near",
+              "value": "Davao City"
+            },
+            {
+              "key": "rating",
+              "value": "4"
+            },
+            {
+              "key": "open_now",
+              "value": "true"
+            },
+            {
+              "key": "price",
+              "value": "cheap"
+            }
+          ],
+          "variable": []
+        }
+      }
+    }
+  ],
+  "variable": []
+}
