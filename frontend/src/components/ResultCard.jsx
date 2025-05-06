@@ -6,7 +6,28 @@ const ResultCard = ({ result }) => {
             <p className="text-sm text-gray-600">Cuisine: <span className="font-medium">{result?.cuisine}</span></p>
             {result?.contact && <p className="text-sm text-gray-600">Contact: <span className="font-medium">{result?.contact}</span></p>}
             <p className="text-sm text-gray-600">Rating: <span className="font-medium">{result?.rating} ⭐</span></p>
-            <p className="text-sm text-gray-600">Hours: <span className="font-medium">{result?.hours}</span></p>
+            {result?.hours && (
+                <div className="text-sm text-gray-600">
+                    <p className="font-medium">Hours:</p>
+                    {Array.isArray(result.hours) ? (
+                        <ul className="ml-4 list-disc">
+                            {result.hours.map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                    ) : typeof result.hours === 'object' ? (
+                        <ul className="ml-4 list-disc">
+                            {Object.entries(result.hours).map(([day, hrs]) => (
+                                <li key={day}>
+                                    <span className="font-medium">{day}:</span> {hrs}
+                                </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        <p>{result.hours}</p>
+                    )}
+                </div>
+            )}
             {result?.notes && <p className="text-sm text-gray-600">Notes: <span className="font-medium">{result?.notes}</span></p>}
         </div>
     )
