@@ -4,7 +4,7 @@ import { extractJsonFromResponse } from './utils/jsonExtractor.js';
 import { fetchAIResponse } from './utils/ai.js';
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = parseInt(process.env.PORT || '5000', 10);
 
 // Middleware
 app.use(cors());
@@ -74,6 +74,6 @@ app.post('/api/execute', executeHandler);
 app.get('/api/foursquare', foursquareHandler);
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server running at http://localhost:${PORT}`);
 });
